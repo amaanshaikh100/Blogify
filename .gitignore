@@ -3,3 +3,6 @@ config.env
 
 # Ignore node modules folder
 node_modules
+
+# Ignore .txt
+plan.txt
