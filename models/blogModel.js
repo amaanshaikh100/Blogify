@@ -1,36 +1,40 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 
 const blogSchema = mongoose.Schema({
   title: {
     type: String,
     required: [true, "Blog title cannot be empty"],
     trim: true,
-    max: [70, "Blog title must have maximum 70 characters"],
-    min: [30, "Blog title must have minimum 30 characters"],
+    maxlength: [70, "Blog title must have a maximum of 70 characters"],
+    minlength: [20, "Blog title must have a minimum of 20 characters"],
   },
   content: {
     type: String,
     required: [true, "Blog content cannot be empty"],
-    min: [
-      100,
-      "Blog content must have content more than or equal to 500 characters",
-    ],
-    max: [
+    minlength: [100, "Blog content must be at least 100 characters long"],
+    maxlength: [
       1200,
-      "Blog content must have content less than or equal to 1200 characters",
+      "Blog content must be less than or equal to 1200 characters",
     ],
   },
   slug: String,
   imageCover: {
     type: String,
-    required: [false, "A Blog must have a cover image"],
+    required: false,
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
 });
 
-const Blog = new mongoose.model("Blog", blogSchema);
+// Mongoose pre-hooks
+blogSchema.pre("save", function (next) {
+  this.slug = slugify(this.title, { lower: true });
+  next();
+});
+
+const Blog = mongoose.model("Blog", blogSchema);
 
 module.exports = Blog;
