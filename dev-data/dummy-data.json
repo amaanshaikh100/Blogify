@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Mastering JavaScript: A Comprehensive Guide for Modern Developers",
+    "content": "JavaScript is the backbone of modern web development, enabling dynamic interactions and enhancing user experience. This guide will take you through the essentials of JavaScript, from the basics to advanced topics, helping you write better code and create highly optimized web applications.",
+    "slug": "mastering-javascript-comprehensive-guide",
+    "imageCover": "https://example.com/images/javascript-guide.jpg",
+    "createdAt": "2024-09-16T08:00:00Z"
+  },
+  {
+    "title": "The Future of Web Development: Trends and Technologies to Watch",
+    "content": "The web development landscape is constantly evolving. In this blog, we explore emerging trends such as serverless architecture, AI-driven development, and the increasing importance of WebAssembly. Learn about the tools and technologies that will shape the future of web development.",
+    "slug": "future-of-web-development-trends",
+    "imageCover": "https://example.com/images/web-dev-trends.jpg",
+    "createdAt": "2024-09-17T09:00:00Z"
+  },
+  {
+    "title": "A Beginner’s Guide to React: Building Your First Web Application",
+    "content": "React is one of the most popular JavaScript libraries for building user interfaces. This guide is designed for beginners looking to get started with React. Learn how to create your first web application using React components, hooks, and the state management system.",
+    "slug": "beginners-guide-to-react",
+    "imageCover": "https://example.com/images/react-beginners-guide.jpg",
+    "createdAt": "2024-09-18T10:30:00Z"
+  },
+  {
+    "title": "Boosting Website Performance: Best Practices for Speed and Efficiency",
+    "content": "Website performance is critical for user experience and SEO. This blog covers techniques like lazy loading, code splitting, and image optimization. We also dive into performance testing tools to ensure your site is running as fast and efficiently as possible.",
+    "slug": "boosting-website-performance-best-practices",
+    "imageCover": "https://example.com/images/performance-best-practices.jpg",
+    "createdAt": "2024-09-19T11:45:00Z"
+  },
+  {
+    "title": "Introduction to Node.js: Building Scalable Backend Applications",
+    "content": "Node.js allows developers to use JavaScript to write server-side code, making it an excellent choice for building scalable and fast backend applications. This blog introduces you to Node.js, discusses its advantages, and walks you through building your first API with Express.",
+    "slug": "introduction-to-nodejs",
+    "imageCover": "https://example.com/images/nodejs-intro.jpg",
+    "createdAt": "2024-09-20T13:00:00Z"
+  }
+]
