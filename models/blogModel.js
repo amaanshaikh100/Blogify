@@ -29,7 +29,7 @@ const blogSchema = mongoose.Schema({
   },
 });
 
-// Mongoose pre-hooks
+// Mongoose Blog pre-hooks
 blogSchema.pre("save", function (next) {
   this.slug = slugify(this.title, { lower: true });
   next();

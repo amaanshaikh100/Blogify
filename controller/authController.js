@@ -51,6 +51,7 @@ exports.logIn = catchAsync(async (req, res, next) => {
 exports.protect = catchAsync(async (req, res, next) => {
   let token = "";
 
+  // 1) check if headers contain bearer token
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
@@ -58,14 +59,17 @@ exports.protect = catchAsync(async (req, res, next) => {
     token = req.headers.authorization.split(" ")[1];
   }
 
+  // 2) if there is no token ask user to logged in
   if (!token) {
     return next(
       new AppError("You are not logged in! Please log in to get access.", 401)
     );
   }
 
+  // 3) if token is received verify it
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
+  // 4) find the user based on decoded token
   const currentUser = await User.findById(decoded.id);
 
   req.user = currentUser;

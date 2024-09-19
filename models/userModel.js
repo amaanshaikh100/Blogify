@@ -34,6 +34,7 @@ const userSchema = mongoose.Schema({
   },
 });
 
+// Mongoose User Pre hooks
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
 
@@ -43,6 +44,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+// Mongoose User Methods
 userSchema.methods.correctPassword = async function (
   candidatePassword,
   userPassword
